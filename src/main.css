@@ -1,0 +1,48 @@
+a,
+a:visited,
+a:focus {
+    appearance: none;
+    color: #FFF;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto;
+    position: relative;
+    padding: 1.5rem;
+    background-color: #03A9FC;
+    height: 100px;
+    cursor: default;
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+    border-radius: 20px;
+    margin: 4px;
+    color: #000;
+    transform-origin: center center;
+    will-change: transform background-color;
+}
+
+.arrow {
+    will-change: color;
+    transition: color .2s ease-in-out;
+}
+
+.step.true {
+    background-color: gray;
+}
+
+.step.true + .arrow {
+    color: gray;
+}
+
+.step:hover {
+    transform: scale(1.1);
+}
