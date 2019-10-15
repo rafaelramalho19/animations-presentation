@@ -265,3 +265,12 @@ a:focus {
   background-color: lightblue;
   border-radius: 50%;
 }
+
+.ball--stagger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+}

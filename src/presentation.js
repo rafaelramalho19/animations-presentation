@@ -33,6 +33,9 @@ import { TweenMax, TimelineMax } from 'gsap';
 import './main.css';
 import codeTweenmaxFrom from "./code-tweenmax-from";
 import codeTimeline from "./code-timeline";
+import codeStagger from "./code-stagger";
+import codeLabels from "./code-labels";
+import codeMoxy from "./code-moxy";
 
 
 // Require CSS
@@ -117,7 +120,6 @@ export default class Presentation extends React.Component {
             <ListItem>WebGL</ListItem>
             <ListItem>Web animations API</ListItem>
             <ListItem>External animations libraries </ListItem>
-            <ListItem>Demo time <span role="img" aria-label="demo girls">👯</span></ListItem>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -472,6 +474,42 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <LiveProvider code={ codeTimeline } noInline={true}>
+              <LiveEditor  style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 14,
+              }}/>
+              <br></br>
+              <LiveError/>
+              <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide>
+          <LiveProvider code={ codeStagger } noInline={true}>
+              <LiveEditor  style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 14,
+              }}/>
+              <br></br>
+              <LiveError/>
+              <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide>
+          <LiveProvider code={ codeLabels } noInline={true}>
+              <LiveEditor  style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 14,
+              }}/>
+              <br></br>
+              <LiveError/>
+              <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide>
+          <LiveProvider code={ codeMoxy } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 14,

@@ -6,7 +6,7 @@ setTimeout(() => {
     const ball = '.ball';
 
     timeline
-        .set(ball, { x: 50 })
+        .set(ball, { x: 50, background: 'red' })
         .to(ball, 2, { x: 100 })
         .to(ball, 1, { x: 300 })
         .to(ball, 1, { x: 0 });
