@@ -10,7 +10,7 @@ setTimeout(() => {
         },
         rotate: {
             value: '+=2turn',
-            direction: 3500,
+            duration: 3500,
         },
         easing: 'easeInOutSine',
         loop: true,

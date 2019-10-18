@@ -282,9 +282,9 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="30">Bézier easing don’t has more advanced options (e.g. elastic and bounce).</ListItem>
+            <ListItem textSize="30">Bézier easing don’t have more advanced options (e.g. elastic and bounce).</ListItem>
             <br/>
-            <ListItem textSize="30">Animation with several steps are very easily overwhelming (too many code for sequences).</ListItem>
+            <ListItem textSize="30">Animations with several steps are overwhelming (too many code for sequences).</ListItem>
             <br/>
             <ListItem textSize="30">Animating SVGs with CSS will literally give you hell (no support for IE11 and bugs everywhere).</ListItem>
             <br/>
@@ -316,20 +316,37 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
+              Canvas
+          </Heading>
+          <br/>
+
+          <Heading size={6} textColor="secondary">
+              Problems:
+          </Heading>
+
+          <List>
+            <ListItem textSize="30">Resizing with browser width and screen display can be complex.</ListItem>
+            <br/>
+            <ListItem textSize="30">Difficult to debug.</ListItem>
+            <br/>
+            <ListItem textSize="30">Development takes longer.</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading size={5} textAlign="left" textColor="secondary">
             WebGL
           </Heading>
           <br/>
 
           <Heading size={6} textColor="secondary">
-            Pros:
+            Features:
           </Heading>
 
           <List>
             <ListItem textSize="30">Amazing performance (Hardware-accelerated).</ListItem>
             <br/>
             <ListItem textSize="30">Support for 3D and VR.</ListItem>
-            <br/>
-            <ListItem textSize="30">Basically Canvas on steroids, if you consider the Z axis as a steroid.</ListItem>
           </List>
         </Slide>
 
@@ -340,13 +357,13 @@ export default class Presentation extends React.Component {
           <br/>
 
           <Heading size={6} textColor="secondary">
-              Cons:
+              Problems:
           </Heading>
 
           <List>
-            <ListItem textSize="30">Resizing with browser width, screen display and such can be complex.</ListItem>
+            <ListItem textSize="30">Resizing with browser width and screen display can be complex.</ListItem>
             <br/>
-            <ListItem textSize="30">Also very difficult to debug.</ListItem>
+            <ListItem textSize="30">Difficult to debug.</ListItem>
             <br/>
             <ListItem textSize="30">Development takes longer.</ListItem>
             <br/>
@@ -377,7 +394,7 @@ export default class Presentation extends React.Component {
           <LiveProvider code={ CodeWebAnimations } noInline={true}>
             <LiveEditor  style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 14,
+              fontSize: 12,
             }}/>
             <br></br>
             <LiveError></LiveError>
@@ -416,7 +433,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
-              External libraries (Anime.js)
+              External libs (Anime.js)
           </Heading>
           <br/>
 
@@ -425,19 +442,18 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="28">Very easy to debug and read sequences code.</ListItem><br/>
-            <ListItem textSize="28">Nice features regarding timeline manipulation (speeding up/down, shifting actions backwards and forward, adding time labels, etc.).</ListItem><br/>
+            <ListItem textSize="28">Very easy to debug and read sequential code.</ListItem><br/>
+            <ListItem textSize="28">Nice features regarding timeline manipulation (speeding up/down, shifting animations backwards and forward in time, etc.).</ListItem><br/>
             <ListItem textSize="28">Solves all SVG cross-browser problems (thank god).</ListItem><br/>
             <ListItem textSize="28">Offers an extended list of default easings and even custom ones.</ListItem><br/>
             <ListItem textSize="28">Allows to create advanced motion animations with small amounts of code.</ListItem><br/>
-            <ListItem textSize="28">Allows you to export your animation to other libraries and technologies.</ListItem><br/>
           </List>
 
         </Slide>
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
-              External libraries (Anime.js)
+              External libs (Anime.js)
           </Heading>
           <br/>
 
@@ -446,7 +462,7 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="30">Since it’s an external library, you have to consider that there’s additional request associated with adding this to your website (usually 6 (gzip) - 14 kb).</ListItem>
+            <ListItem textSize="30">Since it’s an external library, you have to consider that there’s additional request associated with adding this to your website (usually 6kb gzipped).</ListItem>
             <br/>
           </List>
         </Slide>

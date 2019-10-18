@@ -1,6 +1,6 @@
 export default `
-render(<div><div className="ball"></div><input step=".001" type="range" min="0" max="100" value="0"/>
-<div className="play">PLAY</div><div className="pause">PAUSE</div><div className="restart">RESTART</div></div>);
+render(<div><div className="ball"></div><input step=".001" type="range" min="0" max="100" value="0"/><div className="control">
+<div className="play">PLAY</div><div className="pause">PAUSE</div><div className="restart">RESTART</div></div></div>);
 
 setTimeout(() => {
     const progressControl = document.querySelector('input[type="range"]');

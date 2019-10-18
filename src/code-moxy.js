@@ -1,8 +1,6 @@
 export default `
 render(<object className="moxy-logo" type="image/svg+xml" data="./assets/moxy.svg" style={{ opacity: 0 }}></object>);
 
-// const getPathSize = (element) => parseInt(element.getTotalLength(), 10);
-
 setTimeout(() => {
   const logo = document.querySelector('.moxy-logo');
   const letters = logo.contentDocument.querySelectorAll('.letters path');

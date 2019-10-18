@@ -245,6 +245,17 @@ a:focus {
   }
 }
 
+.control {
+  display: flex;
+  justify-content: center;
+}
+
+.control > div {
+  padding: 2px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
 
 .float-label {
     position: fixed;

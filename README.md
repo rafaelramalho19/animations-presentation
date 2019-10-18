@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Web animations presentation
+
+By: **Rafael Ramalho**
 
 ## Available Scripts
 
