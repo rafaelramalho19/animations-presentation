@@ -1,5 +1,6 @@
 {
   "name": "animations-presentation-rr",
+  "homepage": "https://www.rafaelramalho.dev/animations-presentation/",
   "version": "1.0.0",
   "dependencies": {
     "animejs": "^3.1.0",
