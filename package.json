@@ -1,7 +1,6 @@
 {
-  "name": "my-presentation",
-  "version": "0.1.0",
-  "private": true,
+  "name": "animations-presentation-rr",
+  "version": "1.0.0",
   "dependencies": {
     "animejs": "^3.1.0",
     "react": "^16.10.2",
