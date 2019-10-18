@@ -432,7 +432,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
-              WebGL
+              External libraries (GSAP)
           </Heading>
           <br/>
 
@@ -441,7 +441,7 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="30">You have to pay for licensing if you're re-selling your product to multiple users (apps and paid-access sites). That's probably not most cases.</ListItem>
+            <ListItem textSize="30">You have to pay for licensing if you're re-selling your product to multiple users (apps and paid-access sites).</ListItem>
             <br/>
             <ListItem textSize="30">Since it’s an external library, you have to consider that there’s additional request associated with adding this to your website (usually 9-12 kb).</ListItem>
             <br/>
