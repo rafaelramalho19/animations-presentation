@@ -5,9 +5,10 @@ render(<div>{balls.map(id => <div className="ball ball--stagger">{id}</div>)}</d
 setTimeout(() => {
   anime({
     targets: '.ball',
-    translateX: 270,
+    translateX: anime.stagger([0, 150]),
+    rotate: anime.stagger([-360, 360]),
     delay: anime.stagger(100),
     loop: true,
     easing: 'easeInOutQuad'
-  });
+  })
 }, 100);`

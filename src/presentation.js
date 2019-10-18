@@ -22,27 +22,33 @@ import {
   LivePreview
 } from 'react-live'
 
+import anime from 'animejs';
+
+
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
+import './main.css';
+
+// Code section
 import LayerCode from './code-layer';
 import CodeCube from "./code-cube";
 import CodeWebAnimations from "./code-webanimations";
 import Confetties from './confetti';
-import CodeTweenMax from './code-tweenmax';
-import { TweenMax, TimelineMax } from 'gsap';
-import './main.css';
-import codeTweenmaxFrom from "./code-tweenmax-from";
+
+import CodeBasic from './code-basic';
+import codeBasicFrom from "./code-basic-from";
 import codeTimeline from "./code-timeline";
+import codeTimelineControl from "./code-timeline-control";
 import codeStagger from "./code-stagger";
 import codeLabels from "./code-labels";
 import codeMoxy from "./code-moxy";
+import codeStaggerStepped from "./code-stagger-stepped";
 
 
 // Require CSS
 require("normalize.css");
 
-window.TweenMax = TweenMax;
-window.TimelineMax = TimelineMax;
+window.anime = anime;
 
 const theme = createTheme(
   {
@@ -135,19 +141,19 @@ export default class Presentation extends React.Component {
             <div className={"step " + (this.state.disabledTimelineItems.indexOf('0') !== -1)} onClick={() => this.handleTimelineClick('0')}>
               <span>Javascript</span>
             </div>
-            <span class="arrow">➡</span>
+            <span className="arrow">➡</span>
             <div className={"step " + (this.state.disabledTimelineItems.indexOf('1') !== -1)} onClick={() => this.handleTimelineClick('1')}>
               <span>Style</span>
             </div>
-            <span class="arrow">➡</span>
+            <span className="arrow">➡</span>
             <div className={"step " + (this.state.disabledTimelineItems.indexOf('2') !== -1)} onClick={() => this.handleTimelineClick('2')}>
               <span>Layout</span>
             </div>
-            <span class="arrow">➡</span>
+            <span className="arrow">➡</span>
             <div className={"step " + (this.state.disabledTimelineItems.indexOf('3') !== -1)} onClick={() => this.handleTimelineClick('3')}>
               <span>Paint</span>
             </div>
-            <span class="arrow">➡</span>
+            <span className="arrow">➡</span>
             <div className={"step " + (this.state.disabledTimelineItems.indexOf('4') !== -1)} onClick={() => this.handleTimelineClick('4')}>
               <span>Composite</span>
             </div>
@@ -410,7 +416,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
-              External libraries (GSAP)
+              External libraries (Anime.js)
           </Heading>
           <br/>
 
@@ -419,7 +425,6 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="28">Nice performance.</ListItem><br/>
             <ListItem textSize="28">Very easy to debug and read sequences code.</ListItem><br/>
             <ListItem textSize="28">Nice features regarding timeline manipulation (speeding up/down, shifting actions backwards and forward, adding time labels, etc.).</ListItem><br/>
             <ListItem textSize="28">Solves all SVG cross-browser problems (thank god).</ListItem><br/>
@@ -432,7 +437,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={['fade']}>
           <Heading size={5} textAlign="left" textColor="secondary">
-              External libraries (GSAP)
+              External libraries (Anime.js)
           </Heading>
           <br/>
 
@@ -441,15 +446,13 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="30">You have to pay for licensing if you're re-selling your product to multiple users (apps and paid-access sites).</ListItem>
-            <br/>
-            <ListItem textSize="30">Since it’s an external library, you have to consider that there’s additional request associated with adding this to your website (usually 9-12 kb).</ListItem>
+            <ListItem textSize="30">Since it’s an external library, you have to consider that there’s additional request associated with adding this to your website (usually 6 (gzip) - 14 kb).</ListItem>
             <br/>
           </List>
         </Slide>
 
         <Slide>
-          <LiveProvider code={ CodeTweenMax } noInline={true}>
+          <LiveProvider code={ CodeBasic } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 14,
@@ -461,7 +464,31 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <LiveProvider code={ codeTweenmaxFrom } noInline={true}>
+          <LiveProvider code={ codeBasicFrom } noInline={true}>
+              <LiveEditor  style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 14,
+              }}/>
+              <br></br>
+              <LiveError/>
+              <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide>
+          <LiveProvider code={ codeStagger } noInline={true}>
+              <LiveEditor  style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 14,
+              }}/>
+              <br></br>
+              <LiveError/>
+              <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide>
+          <LiveProvider code={ codeStaggerStepped } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 14,
@@ -485,10 +512,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <LiveProvider code={ codeStagger } noInline={true}>
+          <LiveProvider code={ codeTimelineControl } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
-                fontSize: 14,
+                fontSize: 13,
               }}/>
               <br></br>
               <LiveError/>
