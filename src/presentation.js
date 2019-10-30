@@ -107,7 +107,7 @@ export default class Presentation extends React.Component {
     anime({
       targets: Array.from(letters),
       strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInQuad',
+      easing: 'easeInOutQuad',
       duration: 4000,
       begin: () => logo.style.opacity = 1
     });
