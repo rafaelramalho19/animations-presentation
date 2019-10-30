@@ -16,4 +16,4 @@ const css = \`
     }
 \`;
 
-render(<div><style>{css}</style><CoolList/></div>);`
+render(<div><style>{css}</style><CoolList delay={0}/></div>);`

@@ -1,7 +1,7 @@
 export default `
 render(<div className="ball"></div>);
 
-setTimeout(() => {
+onStart(() => {
     const timeline = anime.timeline({
         easing: 'easeOutExpo',
         duration: 1000,
@@ -14,4 +14,4 @@ setTimeout(() => {
       .add({ translateY: -30 })
       .add({ translateX: 0 })
       .add({ translateY: 0 })
-}, 100);`
+});`

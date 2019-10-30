@@ -2,14 +2,12 @@ export default `
 const balls = [1, 2, 3];
 render(<div>{balls.map(id => <div className="ball ball--stagger" key={id}>{id}</div>)}</div>);
 
-setTimeout(() => {
+onStart(() => {
   const balls = document.querySelectorAll('.ball');
 
   const timeline = anime.timeline({
-    easing: 'easeOutExpo',
     duration: 1000,
-    loop: true,
-    easing: 'easeInOutQuad'
+    loop: true
   });
 
   timeline.add({ 
@@ -24,4 +22,4 @@ setTimeout(() => {
     targets: balls[2],
     translateX: 50, 
   }, 400);
-}, 100);`
+});`

@@ -1,10 +1,8 @@
 export default `
 render(<TechnologiesList hidden/>);
 
-setTimeout(() => {
+onStart(() => {
   const technologies = document.querySelectorAll('.technology');
-  const offset = 3;
-
   const timeline = anime.timeline({
     loop: true,
     easing: 'linear',
@@ -26,4 +24,4 @@ setTimeout(() => {
         endDelay: 1000,
       }, index * 1000)
   );
-}, 1000);`
+});`

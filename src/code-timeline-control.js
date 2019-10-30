@@ -2,7 +2,7 @@ export default `
 render(<div><div className="ball"></div><input step=".001" type="range" min="0" max="100" value="0"/><div className="control">
 <div className="play">PLAY</div><div className="pause">PAUSE</div><div className="restart">RESTART</div></div></div>);
 
-setTimeout(() => {
+onStart(() => {
     const progressControl = document.querySelector('input[type="range"]');
     const timeline = anime.timeline({
         easing: 'easeOutExpo',
@@ -19,4 +19,4 @@ setTimeout(() => {
     document.querySelector('.restart').onclick = timeline.restart;
 
     progressControl.addEventListener('input', () => timeline.seek(timeline.duration * (progressControl.value / 100)));
-}, 100);`
+});`

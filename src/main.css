@@ -418,3 +418,32 @@ input[type="range"]::-webkit-slider-thumb {
   width: 16px;
   height: 16px;
 }
+
+.website {
+  position: relative;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.website::after {
+  content: "";
+  position: absolute;
+  transition: transform 0.3s ease-in-out 0.7s;
+  transform: scale3d(0, 1, 1);
+  transform-origin: left center;
+  will-change: transform;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #FFF;
+}
+
+.website.active {
+  opacity: 1;
+}
+
+.website.active::after {
+  transform: scale3d(1, 1, 1);
+}

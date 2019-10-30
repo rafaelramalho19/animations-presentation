@@ -58,6 +58,7 @@ require("normalize.css");
 window.anime = anime;
 window.CoolList = CoolList;
 window.TechnologiesList = TechnologiesList;
+window.onStart = (cb, time = 100) => setTimeout.call(null, cb, time);
 
 const theme = createTheme(
   {
@@ -110,12 +111,7 @@ export default class Presentation extends React.Component {
       easing: 'easeInOutQuad',
       duration: 4000,
       begin: () => logo.style.opacity = 1,
-      complete: () => anime({
-        targets: '.website',
-        opacity: [0, 1],
-        duration: 1000,
-        easing: 'easeInOutQuad',
-      })
+      complete: () => document.querySelectorAll('.website').forEach(website => website.classList.add('active'))
     });
   }
 
@@ -266,6 +262,8 @@ export default class Presentation extends React.Component {
             <br/>
             <ListItem>External libs</ListItem>
           </List>
+
+          <a href="https://css-tricks.com/comparison-animation-technologies/">More info at Sarah Drasner post</a> 
         </Slide>
 
         <Slide transition={['fade']}>
@@ -309,34 +307,16 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <List>
-            <ListItem textSize="30">Bézier easing don’t have more advanced options (e.g. elastic and bounce).</ListItem>
+            <ListItem textSize="30">The Bézier easings don't allow for more advanced customization.</ListItem>
             <br/>
-            <ListItem textSize="30">Animations with several steps are overwhelming (too many code for sequences).</ListItem>
+            <ListItem textSize="30">Animations with several steps are overwhelming.</ListItem>
             <br/>
-            <ListItem textSize="30">Animating SVGs with CSS will literally give you hell (no support for IE11 and bugs everywhere).</ListItem>
+            <ListItem textSize="30">Animating SVGs with CSS has cross-browser problems.</ListItem>
             <br/>
           </List>
         </Slide>
 
         <Slide transition={['fade']}>
-          <Heading size={5} textAlign="left" textColor="secondary">
-              CSS Transitions
-          </Heading>
-          <br/>
-          <br/>
-          <br/>
-          <Text textColor="secondary">When to use them?</Text>
-        </Slide>
-
-        <Slide transition={['fade']}>
-          <Heading size={5} textAlign="left" textColor="secondary">
-              CSS Transitions
-          </Heading>
-          
-          <br/>
-
-          <Text textColor="secondary">Transition from one state to the other</Text>
-
           <LiveProvider code={ codeTransition1 } noInline={true}>
             <LiveEditor  style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -479,6 +459,8 @@ export default class Presentation extends React.Component {
             <br/>
             <ListItem textSize="30">Easy and legible sequencing.</ListItem>
             <br/>
+            <ListItem textSize="30">Closes the gap between javascript and css.</ListItem>
+            <br/>
           </List>
 
         </Slide>
@@ -487,7 +469,7 @@ export default class Presentation extends React.Component {
           <LiveProvider code={ CodeWebAnimations } noInline={true}>
             <LiveEditor  style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 12,
+              fontSize: '1.4vh',
             }}/>
             <br></br>
             <LiveError></LiveError>
@@ -517,9 +499,7 @@ export default class Presentation extends React.Component {
             <ListItem textSize="30">Support cross-browser is not great.</ListItem>
             <Image height="30vh" src="./assets/web-animations-coverage.png"/>
             <br/>
-            <ListItem textSize="30">Not SVG compatible.</ListItem>
-            <br/>
-            <ListItem textSize="30"> Timeline has limitations regarding complex sequences.</ListItem>
+            <ListItem textSize="30">Has limitations regarding complex sequences.</ListItem>
           </List>
           
         </Slide>
@@ -537,7 +517,6 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem textSize="28">Very easy to debug and read sequential code.</ListItem><br/>
             <ListItem textSize="28">Nice features regarding timeline manipulation (speeding up/down, shifting animations backwards and forward in time, etc.).</ListItem><br/>
-            <ListItem textSize="28">Solves all SVG cross-browser problems (thank god).</ListItem><br/>
             <ListItem textSize="28">Offers an extended list of default easings and even custom ones.</ListItem><br/>
             <ListItem textSize="28">Allows to create advanced motion animations with small amounts of code.</ListItem><br/>
           </List>
@@ -678,8 +657,10 @@ export default class Presentation extends React.Component {
           <br/>
           <br/>
           <br/>
+          <a className="website" href="https://rafaelramalho.dev/animations-presentation">https://rafaelramalho.dev/animations-presentation</a>
           <br/>
-          <a className="website" href="https://rafaelramalho.dev/animations-presentation" style={{opacity: 0}}>https://rafaelramalho.dev/animations-presentation</a>
+          <br/>
+          <a className="website" href="https://github.com/rafaelramalho19/animations-presentation">https://github.com/rafaelramalho19/animations-presentation</a>
         </Slide>
       </Deck>
     );

@@ -1,8 +1,8 @@
 export default `
 const balls = [1, 2, 3, 4];
-render(<div>{balls.map(id => <div className="ball ball--stagger">{id}</div>)}</div>);
+render(<div>{balls.map(id => <div className="ball ball--stagger" key={id}>{id}</div>)}</div>);
 
-setTimeout(() => {
+onStart(() => {
   anime({
     targets: '.ball',
     translateX: 270,
@@ -10,4 +10,4 @@ setTimeout(() => {
     loop: true,
     easing: 'easeInOutQuad'
   });
-}, 100);`
+});`

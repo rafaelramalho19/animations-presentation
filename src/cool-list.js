@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 
-export default () => {
+export default ({ delay = 500 }) => {
   const [elements, setElements] = useState([{ text: "List item", id: 0, visible: true }]);
   const [lastElement, setLastElement] = useState(0);
   
@@ -30,7 +30,7 @@ export default () => {
 
     setTimeout(() => {
         setElements(newElements.filter(({ id: _id}) => id !== _id));
-    }, 500);
+    }, delay);
   });
 
   return (

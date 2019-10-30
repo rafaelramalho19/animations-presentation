@@ -1,7 +1,7 @@
 export default `
 render(<div className="ball" style={{ transform: 'translateX(10px)' }}>Ball</div>);
 
-setTimeout(() => {
+onStart(() => {
     anime({
         targets: '.ball',
         translateX: {
@@ -15,4 +15,4 @@ setTimeout(() => {
         easing: 'easeInOutSine',
         loop: true,
     });
-}, 100);`
+});`
