@@ -666,7 +666,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <object className="thankyou" type="image/svg+xml" data="./assets/thankyou.svg" onLoad={ this.animateThankYou } style={{ opacity: 0 }}/>
+          <object className="thankyou" type="image/svg+xml" data="./assets/thankyou.svg" onLoad={ this.animateThankYou } style={{ opacity: 0 }} aria-label="thank you"/>
         </Slide>
       </Deck>
     );

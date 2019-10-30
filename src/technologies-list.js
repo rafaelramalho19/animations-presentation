@@ -11,7 +11,7 @@ const technologies = shuffle([
   "MySQL.svg",
   "nextjs.png",
   "nodejs.svg",
-  "postgreSQL.svg",
+  "postgresql.svg",
   "react.svg"
 ]);
 

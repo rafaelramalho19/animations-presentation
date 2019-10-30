@@ -1,15 +1,15 @@
 {
   "main.css": "/animations-presentation/static/css/main.bddfc288.chunk.css",
-  "main.js": "/animations-presentation/static/js/main.57f4b272.chunk.js",
-  "main.js.map": "/animations-presentation/static/js/main.57f4b272.chunk.js.map",
+  "main.js": "/animations-presentation/static/js/main.01e646f0.chunk.js",
+  "main.js.map": "/animations-presentation/static/js/main.01e646f0.chunk.js.map",
   "static/css/1.d3608491.chunk.css": "/animations-presentation/static/css/1.d3608491.chunk.css",
   "static/js/1.6c60d4b6.chunk.js": "/animations-presentation/static/js/1.6c60d4b6.chunk.js",
   "static/js/1.6c60d4b6.chunk.js.map": "/animations-presentation/static/js/1.6c60d4b6.chunk.js.map",
   "runtime~main.js": "/animations-presentation/static/js/runtime~main.60f398ad.js",
   "runtime~main.js.map": "/animations-presentation/static/js/runtime~main.60f398ad.js.map",
-  "static/css/main.bddfc288.chunk.css.map": "/animations-presentation/static/css/main.bddfc288.chunk.css.map",
   "static/css/1.d3608491.chunk.css.map": "/animations-presentation/static/css/1.d3608491.chunk.css.map",
+  "static/css/main.bddfc288.chunk.css.map": "/animations-presentation/static/css/main.bddfc288.chunk.css.map",
   "index.html": "/animations-presentation/index.html",
-  "precache-manifest.2a0898cf7a1e22b7b929a795ead9ac1d.js": "/animations-presentation/precache-manifest.2a0898cf7a1e22b7b929a795ead9ac1d.js",
+  "precache-manifest.3be300119250646b2e3dd6330c9c443d.js": "/animations-presentation/precache-manifest.3be300119250646b2e3dd6330c9c443d.js",
   "service-worker.js": "/animations-presentation/service-worker.js"
 }
