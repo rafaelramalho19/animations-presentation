@@ -109,7 +109,13 @@ export default class Presentation extends React.Component {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: 'easeInOutQuad',
       duration: 4000,
-      begin: () => logo.style.opacity = 1
+      begin: () => logo.style.opacity = 1,
+      complete: () => anime({
+        targets: '.website',
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeInOutQuad',
+      })
     });
   }
 
@@ -667,6 +673,13 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <object className="thankyou" type="image/svg+xml" data="./assets/thankyou.svg" onLoad={ this.animateThankYou } style={{ opacity: 0 }} aria-label="thank you"/>
+
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <a className="website" href="https://rafaelramalho.dev/animations-presentation" style={{opacity: 0}}>https://rafaelramalho.dev/animations-presentation</a>
         </Slide>
       </Deck>
     );
