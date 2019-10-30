@@ -34,6 +34,8 @@ import LayerCode from './code-layer';
 import CodeCube from "./code-cube";
 import CodeWebAnimations from "./code-webanimations";
 import Confetties from './confetti';
+import CoolList from './cool-list';
+import TechnologiesList from './technologies-list';
 
 import CodeBasic from './code-basic';
 import codeBasicFrom from "./code-basic-from";
@@ -43,16 +45,23 @@ import codeStagger from "./code-stagger";
 import codeLabels from "./code-labels";
 import codeMoxy from "./code-moxy";
 import codeStaggerStepped from "./code-stagger-stepped";
+import codeTransition1 from "./code-transition-1";
+import codeTransition2 from "./code-transition-2";
+import codeAnimation1 from "./code-animation-1";
+import codeAnimation2 from "./code-animation-2";
+import codeTechnologies from "./code-technologies";
 
 
 // Require CSS
 require("normalize.css");
 
 window.anime = anime;
+window.CoolList = CoolList;
+window.TechnologiesList = TechnologiesList;
 
 const theme = createTheme(
   {
-    primary: "#000",
+    primary: "#060409",
     secondary: "#fff",
     tertiary: "#03A9FC",
     quaternary: "#CECECE"
@@ -89,6 +98,19 @@ export default class Presentation extends React.Component {
 
   handleCompositeVideoHover() {
     this.compositeVideoRef.current.play();
+  }
+
+  animateThankYou = () => {
+    const logo = document.querySelector('.thankyou');
+    const letters = logo.contentDocument.querySelectorAll('path');
+
+    anime({
+      targets: Array.from(letters),
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInQuad',
+      duration: 4000,
+      begin: () => logo.style.opacity = 1
+    });
   }
 
   render() {
@@ -132,7 +154,6 @@ export default class Presentation extends React.Component {
           <Heading size={5} textColor="secondary">
             Performance 101 - The pixel pipeline
           </Heading>
-          
 
           <br></br>
           <br></br>
@@ -289,6 +310,72 @@ export default class Presentation extends React.Component {
             <ListItem textSize="30">Animating SVGs with CSS will literally give you hell (no support for IE11 and bugs everywhere).</ListItem>
             <br/>
           </List>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading size={5} textAlign="left" textColor="secondary">
+              CSS Transitions
+          </Heading>
+          <br/>
+          <br/>
+          <br/>
+          <Text textColor="secondary">When to use them?</Text>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading size={5} textAlign="left" textColor="secondary">
+              CSS Transitions
+          </Heading>
+          
+          <br/>
+
+          <Text textColor="secondary">Transition from one state to the other</Text>
+
+          <LiveProvider code={ codeTransition1 } noInline={true}>
+            <LiveEditor  style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: '16px'
+            }}/>
+            <br></br>
+            <LiveError></LiveError>
+            <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <LiveProvider code={ codeTransition2 } noInline={true}>
+            <LiveEditor  style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: '14px'
+            }}/>
+            <br></br>
+            <LiveError></LiveError>
+            <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <LiveProvider code={ codeAnimation1 } noInline={true}>
+            <LiveEditor  style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: '14px'
+            }}/>
+            <br></br>
+            <LiveError></LiveError>
+            <LivePreview />
+          </LiveProvider>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <LiveProvider code={ codeAnimation2 } noInline={true}>
+            <LiveEditor  style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: '14px'
+            }}/>
+            <br></br>
+            <LiveError></LiveError>
+            <LivePreview />
+          </LiveProvider>
         </Slide>
 
         <Slide transition={['fade']}>
@@ -467,7 +554,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ CodeBasic } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -479,7 +566,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeBasicFrom } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -491,7 +578,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeStagger } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -503,7 +590,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeStaggerStepped } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -515,7 +602,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeTimeline } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -527,7 +614,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeTimelineControl } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -539,7 +626,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeLabels } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -551,7 +638,7 @@ export default class Presentation extends React.Component {
           </LiveProvider>
         </Slide>
 
-        <Slide>
+        <Slide transition={['fade']}>
           <LiveProvider code={ codeMoxy } noInline={true}>
               <LiveEditor  style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
@@ -561,6 +648,25 @@ export default class Presentation extends React.Component {
               <LiveError/>
               <LivePreview />
           </LiveProvider>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <div className="vertical-preview">
+            <LiveProvider code={ codeTechnologies } noInline={true}>
+                <LiveEditor  style={{
+                  fontFamily: '"Fira code", "Fira Mono", monospace',
+                  fontSize: 14,
+                }}/>
+                <br></br>
+                {/* <LiveError/> */}
+                <LivePreview />
+            </LiveProvider>
+          </div>
+          <small><a href="https://icons8.com/">Icons by Icons8</a></small>
+        </Slide>
+
+        <Slide>
+          <object className="thankyou" type="image/svg+xml" data="./assets/thankyou.svg" onLoad={ this.animateThankYou } style={{ opacity: 0 }}/>
         </Slide>
       </Deck>
     );

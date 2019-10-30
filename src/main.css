@@ -5,6 +5,11 @@ a:focus {
   color: #fff;
 }
 
+.vertical-preview {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .timeline {
   display: flex;
   justify-content: center;
@@ -286,6 +291,97 @@ a:focus {
   width: 100px;
   height: 100px;
   margin: 0 25px;
+}
+
+.cool-list {
+  displaY: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.cool-list-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+.cool-list-item button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.technologies {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+
+  top: -60px;
+  height: 70vh;
+}
+
+.technologies.hidden-edges {
+  overflow: hidden;
+}
+
+.technologies.hidden-edges::after {
+    content: "";
+    position: absolute;
+    height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #060409 50%, rgba(0,0,0, 0) 100%);
+}
+
+.technologies.hidden-edges::before {
+  content: "";
+  position: absolute;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #060409 50%, rgba(0,0,0, 0) 100%);
+  z-index: 2;
+}
+
+.tech-col {
+  position: relative;
+  width: 20vw;
+}
+
+.technology {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+
+  width: 120px;
+  height: 120px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+}
+
+.technology img {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  object-fit: contain;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #FFF;
 }
 
 input[type="range"] {
